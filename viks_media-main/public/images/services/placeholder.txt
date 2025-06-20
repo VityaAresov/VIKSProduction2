@@ -1,0 +1,24 @@
+# Service Images Placeholder
+
+This folder contains placeholder paths for service images.
+Replace these with actual images:
+
+## Video Production
+- video-header.png
+- video-layout.png  
+- video-creative.png
+- video-postprod.png
+
+## Social Media Management
+- smm-header.png
+- smm-layout.png
+- smm-creative.png
+- smm-analytics.png
+
+## Web Development
+- webdev-header.png
+- webdev-layout.png
+- webdev-creative.png
+- webdev-maintenance.png
+
+All images should be optimized for web (recommended: 1200x800px for headers, 600x400px for other sections)
