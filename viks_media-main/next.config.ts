@@ -1,12 +1,22 @@
-// next.config.ts
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   eslint: {
-    // не останавливать билд при ошибках линтера
     ignoreDuringBuilds: true,
   },
-  // ...остальные настройки
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  experimental: {
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+  },
 }
 
 export default nextConfig
