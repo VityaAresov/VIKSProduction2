@@ -15,8 +15,6 @@
 .pageContainer {
     position: relative;
     width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
     background: #FFFFFF;
     overflow-x: hidden;
 }
@@ -30,9 +28,6 @@
     background: #FFFFFF;
     box-sizing: border-box;
     width: 100%;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .headerContent {
@@ -79,13 +74,14 @@
     padding: 80px 80px 120px;
     background: #FFFFFF;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .servicesGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px;
-    max-width: 1280px;
+    max-width: 1400px; /* Increased for full width */
     margin: 0 auto;
 }
 

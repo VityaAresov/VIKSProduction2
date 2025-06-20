@@ -17,8 +17,6 @@
 .pageContainer {
     position: relative;
     width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
     background: #FFFFFF;
     overflow-x: hidden;
 }
@@ -35,9 +33,6 @@
     background: #FFFFFF;
     box-sizing: border-box;
     width: 100%;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .headerContentContainer {
@@ -50,7 +45,7 @@
     flex: 1;
     min-width: 300px;
     max-width: 613px;
-    flex-basis: 45%;
+    flex-basis: 55%;
     order: 1;
 }
 
@@ -99,9 +94,9 @@
 
 .headerImageContainer {
     flex: 1;
-    min-width: 300px;
-    max-width: 591px;
-    flex-basis: 40%;
+    min-width: 250px;
+    max-width: 400px; /* Reduced from 591px */
+    flex-basis: 35%; /* Reduced from 40% */
     order: 2;
 }
 
@@ -109,7 +104,7 @@
     display: block;
     width: 100%;
     height: auto;
-    max-height: 388px;
+    max-height: 260px; /* Reduced from 388px */
     border-radius: 30px;
     object-fit: cover;
     background-color: #eee;
@@ -128,9 +123,6 @@
     box-sizing: border-box;
     margin-top: 0px;
     width: 100%;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .layoutContainer {
@@ -142,21 +134,21 @@
     padding: 0px;
     gap: 80px;
     width: 100%;
-    max-width: 1280px;
+    max-width: 1400px; /* Increased for full width */
 }
 
 .layoutImageContainer {
     flex: 1;
-    min-width: 300px;
-    max-width: 600px;
-    flex-basis: 45%;
+    min-width: 250px;
+    max-width: 450px; /* Reduced from 600px */
+    flex-basis: 35%; /* Reduced from 45% */
 }
 
 .layoutImage {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 606px;
+    max-height: 400px; /* Reduced from 606px */
     border-radius: 30px;
     object-fit: cover;
     background-color: #ddd;
@@ -170,8 +162,8 @@
     gap: 35px;
     flex: 1;
     min-width: 300px;
-    max-width: 600px;
-    flex-basis: 45%;
+    max-width: 650px; /* Increased from 600px */
+    flex-basis: 55%; /* Increased from 45% */
 }
 
 .layoutIntroBlock {
@@ -185,7 +177,7 @@
     margin: 0;
     font-family: 'Evolventa', sans-serif;
     font-weight: 700;
-    font-size: clamp(36px, 4vw, 48px);
+    font-size: 36px; /* Changed from clamp(36px, 4vw, 48px) to fixed 36px */
     line-height: 120%;
     color: #000000;
 }
@@ -258,9 +250,6 @@
     box-sizing: border-box;
     margin-top: 0px;
     width: 100%;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* --- Order classes for flexible layout --- */
@@ -277,7 +266,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 64px 112px;
+    padding: 80px 40px 112px; /* Reduced side padding for full width */
     gap: 60px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #000000;
     background-size: cover;
@@ -285,9 +274,6 @@
     box-sizing: border-box;
     margin-top: 60px;
     width: 100%;
-    max-width: calc(1440px - 128px);
-    margin-left: auto;
-    margin-right: auto;
     position: relative;
     border-radius: 25px;
     margin-bottom: 60px;
@@ -299,7 +285,7 @@
     align-items: center;
     gap: 60px;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1400px; /* Increased for full width */
 }
 
 .pricingTitle {
@@ -322,7 +308,7 @@
     flex-wrap: wrap;
     gap: 40px;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1400px; /* Increased for full width */
 }
 
 .priceCard {
@@ -507,19 +493,17 @@
 }
 
 @media (max-width: 960px) {
-    .headerSection, .layoutSection, .creativeDirectionSection, .pricingSection {
+    .headerSection, .layoutSection, .creativeDirectionSection {
         padding-left: 40px;
         padding-right: 40px;
         gap: 40px;
-        max-width: none;
     }
     
     .pricingSection {
-        padding: 60px 40px 80px;
+        padding: 60px 20px 80px; /* Reduced side padding for mobile */
         gap: 40px;
         border-radius: 20px;
-        margin: 40px auto;
-        max-width: calc(100% - 80px);
+        margin: 40px 20px; /* Add side margins for mobile */
     }
     
     .pricingTitle { margin-top: 0; }
@@ -527,14 +511,14 @@
     /* Header stack */
     .headerSection { text-align: center; padding-top: 80px; padding-bottom: 80px; }
     .headerContentContainer { align-items: center; order: 1; flex-basis: 100%; }
-    .headerImageContainer { order: 2; flex-basis: 80%; max-width: 500px; }
+    .headerImageContainer { order: 2; flex-basis: 80%; max-width: 350px; } /* Reduced max-width */
     .taglineWrapper { justify-content: center; }
 
     /* Layout stack */
     .layoutSection { padding-top: 60px; padding-bottom: 60px; }
     .layoutContainer { flex-direction: column; gap: 40px; }
     .layoutContent { order: 2; max-width: 100%; align-items: center; text-align: center; }
-    .layoutImageContainer { order: 1; max-width: 500px; }
+    .layoutImageContainer { order: 1; max-width: 400px; } /* Reduced max-width */
     .layoutIntroBlock, .featuresList { align-items: center; }
     .featuresList { max-width: 90%; }
 
@@ -554,22 +538,21 @@
 }
 
 @media (max-width: 600px) {
-    .headerSection, .layoutSection, .creativeDirectionSection, .pricingSection {
+    .headerSection, .layoutSection, .creativeDirectionSection {
         padding: 60px 20px;
         gap: 30px;
     }
     
     .pricingSection {
-        padding: 50px 20px 60px;
+        padding: 50px 15px 60px; /* Further reduced side padding */
         gap: 30px;
         border-radius: 15px;
-        margin: 30px auto;
-        max-width: calc(100% - 40px);
+        margin: 30px 15px; /* Reduced side margins */
     }
     
     .heading1 { font-size: clamp(36px, 8vw, 42px); }
     .description1 { font-size: 16px; }
-    .heading2 { font-size: clamp(32px, 7vw, 38px); }
+    .heading2 { font-size: 32px; } /* Fixed size instead of clamp */
     .description2 { font-size: 15px; line-height: 1.6; }
     .keyFeaturesTitle { font-size: 18px; }
     .featureTitle { font-size: 17px; }
@@ -578,6 +561,12 @@
     .planName { font-size: clamp(45px, 10vw, 55px); }
     .planPrice { font-size: 18px; }
     .planFeatureItem { font-size: 15px; }
+
+    /* Image size adjustments for mobile */
+    .headerImageContainer { max-width: 300px; }
+    .headerImage { max-height: 200px; }
+    .layoutImageContainer { max-width: 350px; }
+    .layoutImage { max-height: 300px; }
 
     /* Further Content Alignment */
     .layoutContent { gap: 30px; }
