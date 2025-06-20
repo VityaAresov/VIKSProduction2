@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VIKS Production - Digital Marketing Agency
+
+A modern Next.js website for VIKS Production, featuring video production, social media management, web development, and digital marketing services.
+
+## Features
+
+- **Modern Design**: Clean, professional design with smooth animations
+- **Responsive**: Fully responsive across all devices
+- **Performance Optimized**: Fast loading with Next.js optimization
+- **Interactive Components**: Portfolio gallery, testimonials, contact forms
+- **SEO Friendly**: Optimized for search engines
+
+## Tech Stack
+
+- **Framework**: Next.js 15.2.4
+- **Language**: TypeScript
+- **Styling**: CSS Modules + Tailwind CSS
+- **UI Components**: Custom components with Swiper.js
+- **Icons**: React Icons, Heroicons
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/VityaAresov/VIKSProduction2.git
+   cd VIKSProduction2
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## Project Structure
+
+```
+viks_media-main/
+├── src/
+│   ├── app/                 # Next.js app directory
+│   │   ├── agency/         # About us page
+│   │   ├── cases/          # Portfolio/cases page
+│   │   ├── contact-us/     # Contact form page
+│   │   ├── services/       # Services pages
+│   │   ├── privacy/        # Privacy policy
+│   │   └── terms/          # Terms of service
+│   ├── components/         # Reusable components
+│   │   ├── common/         # Header, Footer, etc.
+│   │   ├── hero/           # Hero section components
+│   │   ├── Portfolio/      # Portfolio components
+│   │   ├── Service/        # Services components
+│   │   └── ...
+│   └── data/              # Static data and configurations
+├── public/                # Static assets
+│   └── images/           # Image assets
+└── api/                  # Serverless functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Components
 
-You can start editing the page by modifying `app/Page.tsx`. The page auto-updates as you edit the file.
+- **Hero Section**: Dynamic hero with animated statistics
+- **Services**: Comprehensive service showcase
+- **Portfolio**: Interactive portfolio grid with modal views
+- **Team**: Team member carousel
+- **Contact Form**: Integrated contact form with Telegram notifications
+- **Blog**: Blog section with featured articles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The project is configured for deployment on Vercel:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For the contact form to work, set up these environment variables:
 
-## Deploy on Vercel
+```env
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is private and proprietary to VIKS Production.
+
+## Contact
+
+VIKS Production - info@viksproduction.com
+
+Project Link: [https://github.com/VityaAresov/VIKSProduction2](https://github.com/VityaAresov/VIKSProduction2)
