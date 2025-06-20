@@ -23,12 +23,15 @@
     overflow-x: hidden;
 }
 
-/* --- Header Section --- */
+/* --- Section 1: Header --- */
 .headerSection {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     padding: 112px 80px;
+    gap: 80px;
     background: #FFFFFF;
     box-sizing: border-box;
     width: 100%;
@@ -37,14 +40,22 @@
     margin-right: auto;
 }
 
-.headerContent {
+.headerContentContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    padding: 0px;
     gap: 32px;
-    max-width: 800px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 613px;
+    flex-basis: 45%;
+    order: 1;
+}
+
+.taglineWrapper {
+    display: flex;
 }
 
 .tagline {
@@ -56,7 +67,16 @@
     margin: 0;
 }
 
-.title {
+.headerTextContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+    width: 100%;
+}
+
+.heading1 {
     margin: 0;
     font-family: 'Evolventa', sans-serif;
     font-weight: 700;
@@ -64,16 +84,192 @@
     line-height: 120%;
     letter-spacing: -0.03em;
     color: #000000;
+    align-self: stretch;
 }
 
-.description {
+.description1 {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
     color: #000000;
+    max-width: 558px;
+}
+
+.headerImageContainer {
+    flex: 1;
+    min-width: 300px;
+    max-width: 591px;
+    flex-basis: 40%;
+    order: 2;
+}
+
+.headerImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 388px;
+    border-radius: 30px;
+    object-fit: cover;
+    background-color: #eee;
+}
+
+/* --- Section 2: Layout (Video Production) --- */
+.layoutSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 95px 80px 65px;
+    gap: 93px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    margin-top: 0px;
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.layoutContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    gap: 80px;
+    width: 100%;
+    max-width: 1280px;
+}
+
+.layoutImageContainer {
+    flex: 1;
+    min-width: 300px;
     max-width: 600px;
+    flex-basis: 45%;
+}
+
+.layoutImage {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 606px;
+    border-radius: 30px;
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+.layoutContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 35px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    flex-basis: 45%;
+}
+
+.layoutIntroBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    width: 100%;
+}
+
+.heading2 {
+    margin: 0;
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 4vw, 48px);
+    line-height: 120%;
+    color: #000000;
+}
+
+.description2 {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+
+.keyFeaturesTitle {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+
+.featuresList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 26px;
+    width: 100%;
+    max-width: 586px;
+}
+
+.featureItem {
+    width: 100%;
+}
+
+.featureTitle {
+    margin: 0 0 8px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 131%;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+
+.featureDescription {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    color: #555;
+    max-width: 551px;
+}
+
+/* --- Section 3: Creative Direction --- */
+.creativeDirectionSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 80px 65px;
+    gap: 80px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    margin-top: 0px;
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Order classes for flexible layout --- */
+.orderFirst {
+    order: 1;
+}
+
+.orderSecond {
+    order: 2;
 }
 
 /* --- Pricing Section --- */
@@ -87,14 +283,14 @@
     background-size: cover;
     background-position: center;
     box-sizing: border-box;
-    margin-top: 0px;
+    margin-top: 60px;
     width: 100%;
-    max-width: 1440px;
+    max-width: calc(1440px - 128px);
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    border-radius: 25px; /* Added border radius to fix the black square issue */
-    margin: 60px auto; /* Added margin for spacing */
+    border-radius: 25px;
+    margin-bottom: 60px;
 }
 
 .pricingContainer {
@@ -311,20 +507,41 @@
 }
 
 @media (max-width: 960px) {
-    .headerSection, .pricingSection {
+    .headerSection, .layoutSection, .creativeDirectionSection, .pricingSection {
         padding-left: 40px;
         padding-right: 40px;
         gap: 40px;
         max-width: none;
     }
+    
     .pricingSection {
         padding: 60px 40px 80px;
         gap: 40px;
         border-radius: 20px;
         margin: 40px auto;
+        max-width: calc(100% - 80px);
     }
+    
     .pricingTitle { margin-top: 0; }
+
+    /* Header stack */
     .headerSection { text-align: center; padding-top: 80px; padding-bottom: 80px; }
+    .headerContentContainer { align-items: center; order: 1; flex-basis: 100%; }
+    .headerImageContainer { order: 2; flex-basis: 80%; max-width: 500px; }
+    .taglineWrapper { justify-content: center; }
+
+    /* Layout stack */
+    .layoutSection { padding-top: 60px; padding-bottom: 60px; }
+    .layoutContainer { flex-direction: column; gap: 40px; }
+    .layoutContent { order: 2; max-width: 100%; align-items: center; text-align: center; }
+    .layoutImageContainer { order: 1; max-width: 500px; }
+    .layoutIntroBlock, .featuresList { align-items: center; }
+    .featuresList { max-width: 90%; }
+
+    /* Creative stack */
+    .creativeDirectionSection { padding-top: 60px; padding-bottom: 60px; }
+
+    /* CTA Adjustments */
     .ctaContainer {
         flex-direction: column;
         gap: 30px;
@@ -337,23 +554,37 @@
 }
 
 @media (max-width: 600px) {
-    .headerSection, .pricingSection {
+    .headerSection, .layoutSection, .creativeDirectionSection, .pricingSection {
         padding: 60px 20px;
         gap: 30px;
     }
+    
     .pricingSection {
         padding: 50px 20px 60px;
         gap: 30px;
         border-radius: 15px;
         margin: 30px auto;
+        max-width: calc(100% - 40px);
     }
-    .title { font-size: clamp(36px, 8vw, 42px); }
-    .description { font-size: 16px; }
+    
+    .heading1 { font-size: clamp(36px, 8vw, 42px); }
+    .description1 { font-size: 16px; }
+    .heading2 { font-size: clamp(32px, 7vw, 38px); }
+    .description2 { font-size: 15px; line-height: 1.6; }
+    .keyFeaturesTitle { font-size: 18px; }
+    .featureTitle { font-size: 17px; }
+    .featureDescription { font-size: 15px; }
     .pricingTitle { font-size: clamp(30px, 7vw, 36px); }
     .planName { font-size: clamp(45px, 10vw, 55px); }
     .planPrice { font-size: 18px; }
     .planFeatureItem { font-size: 15px; }
-    
+
+    /* Further Content Alignment */
+    .layoutContent { gap: 30px; }
+    .layoutIntroBlock { gap: 15px; }
+    .featuresList { gap: 20px; max-width: 100%;}
+
+    /* Pricing Card Stacking */
     .pricingCardsContainer {
         flex-direction: column;
         align-items: center;
@@ -396,7 +627,7 @@
     .planFeatures li:last-child {
         padding-bottom: 0;
     }
-    
+
     .ctaContainer {
         flex-direction: column;
         gap: 20px;
@@ -404,9 +635,11 @@
         max-width: 100%;
         padding: 10px 0;
     }
+
     .ctaText {
         font-size: clamp(22px, 6vw, 26px);
     }
+
     .ctaButton {
         padding: 14px 28px;
         font-size: 15px;
