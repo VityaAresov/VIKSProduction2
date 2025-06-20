@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from './ServicePage.module.css'; // Import CSS Module
+import styles from './ServicesPage.module.css'; // Import CSS Module
 
 // Placeholder image paths - replace with your actual image paths
 const placeholderHeaderImg = '/images/services/placeholder-header.png';
