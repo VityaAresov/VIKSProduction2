@@ -1,11 +1,14 @@
 'use client';
 
 import React, {JSX} from "react";
-import Image from "next/image";
 import styles from "./Frame.module.css";
 
-
-import arrowRight from "../../../public/images/arrow-right.png";
+// SVG Arrow Icon
+const ArrowRightIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
 
 
 export const Frame = (): JSX.Element => {
@@ -28,13 +31,7 @@ marketing, and web development to help startups and businesses grow smarter and 
                     <div className={styles.scheduleButtonContent}>
                         <div className={styles.scheduleButtonText}>Schedule Call</div>
                     </div>
-                    <Image
-                        className={styles.arrowRight}
-                        alt="Arrow pointing right" // Added descriptive alt text
-                        src={arrowRight}
-                        width={24}
-                        height={24}
-                    />
+                    <ArrowRightIcon />
                 </a>
                 <a href="/cases" className={styles.caseStudyLink}> {}
                     View Case Study

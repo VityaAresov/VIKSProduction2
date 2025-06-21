@@ -350,14 +350,11 @@
 }
 
 /* Стрелка рядом с текстом */
-.arrow {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 6px solid currentColor;
+.servicesDropdown .navItem svg {
+  width: 16px;
+  height: 16px;
   transition: transform 0.2s ease;
-  margin-left: 4px;
+  color: currentColor;
 }
 
 /* Сам список, скрыт по умолчанию */
@@ -397,6 +394,6 @@
 .servicesDropdown .dropdownMenu:hover {
   display: block;
 }
-.servicesDropdown:hover .arrow {
+.servicesDropdown:hover svg {
   transform: rotate(180deg);
 }

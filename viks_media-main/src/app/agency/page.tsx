@@ -3,17 +3,63 @@
 import React, { useState } from 'react';
 import styles from './AgencyPage.module.css'; // Your CSS Module
 
-// --- Icon Imports ---
-import {
-    FaCheckCircle,
-    FaHeadset,
-    FaClock,
-    FaLinkedinIn,
-    FaTwitter,
-    FaDribbble,
-    FaArrowLeft,
-    FaArrowRight // Ensure FaArrowRight is imported
-} from 'react-icons/fa';
+// SVG Icons
+const CheckCircleIcon = () => (
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.7088 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4905 2.02168 11.3363C2.16356 9.18203 2.99721 7.13214 4.39828 5.49883C5.79935 3.86553 7.69279 2.72636 9.79619 2.24223C11.8996 1.75809 14.1003 1.95185 16.07 2.79" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <polyline points="22,4 12,14.01 9,11.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
+const HeadsetIcon = () => (
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 18V12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12V18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M21 19C21 20.1046 20.1046 21 19 21H18C16.8954 21 16 20.1046 16 19V16C16 14.8954 16.8954 14 18 14H21V19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M3 19C3 20.1046 3.89543 21 5 21H6C7.10457 21 8 20.1046 8 19V16C8 14.8954 7.10457 14 6 14H3V19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
+const ClockIcon = () => (
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+        <polyline points="12,6 12,12 16,14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
+const LinkedInIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8V8Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <rect x="2" y="9" width="4" height="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="4" cy="4" r="2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
+const TwitterIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.95718 14.8821 3.28445C14.0247 3.61173 13.2884 4.19445 12.773 4.95371C12.2575 5.71297 11.9877 6.61435 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39624C5.36074 6.60667 4.01032 5.43666 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.099 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
+const DribbbleIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+        <path d="M8.56 2.75C4.37 6.03 2 10.16 2 15.16C5.44 11.94 8.69 8.75 12 5.56" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M21.44 21.25C17.25 17.97 15 13.84 15 8.84C18.44 12.06 21.69 15.25 21.44 21.25Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7.5 21.25C11.69 17.97 14 13.84 14 8.84" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
+const ArrowLeftIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 12H5M12 5L5 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
+const ArrowRightIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
 
 // --- SWIPER Imports ---
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -54,7 +100,7 @@ const teamMembers: TeamMember[] = [
         title: "CEO & Founder",
         description: "Founder of VIKS  — a videographer and creative entrepreneur crafting modern marketing solutions for startups and businesses.",
         image: teamMember1,
-        socials: { linkedin: "https://www.linkedin.com/in/viktor-soloviov/", instagram: "https://www.instagram.com/soloviov_vitya/", dribbble: "#" }
+        socials: { linkedin: "https://www.linkedin.com/in/viktor-soloviov/", twitter: "https://www.instagram.com/soloviov_vitya/", dribbble: "#" }
     },
     {
         id: 2,
@@ -165,7 +211,7 @@ const Page: React.FC = () => {
                         <div className={styles.infoColumn}>
                             <div className={styles.infoItem}>
                                 <div className={styles.infoIconWrapper}>
-                                    <FaCheckCircle className={styles.infoIcon} />
+                                    <CheckCircleIcon />
                                 </div>
                                 <div className={styles.infoTextWrapper}>
                                     <h3 className={styles.infoHeading}>The Quality Of Our Work</h3>
@@ -179,7 +225,7 @@ const Page: React.FC = () => {
                         <div className={styles.infoColumn}>
                             <div className={styles.infoItem}>
                                 <div className={styles.infoIconWrapper}>
-                                    <FaHeadset className={styles.infoIcon} />
+                                    <HeadsetIcon />
                                 </div>
                                 <div className={styles.infoTextWrapper}>
                                     <h3 className={styles.infoHeading}>Customer Care</h3>
@@ -193,7 +239,7 @@ const Page: React.FC = () => {
                         <div className={styles.infoColumn}>
                             <div className={styles.infoItem}>
                                 <div className={styles.infoIconWrapper}>
-                                    <FaClock className={styles.infoIcon} />
+                                    <ClockIcon />
                                 </div>
                                 <div className={styles.infoTextWrapper}>
                                     <h3 className={styles.infoHeading}>Speed Of Service Provision</h3>
@@ -251,9 +297,9 @@ const Page: React.FC = () => {
                                                 <p className={styles.teamCardJobTitle}>{member.title}</p>
                                             </div>
                                             <div className={styles.teamCardSocialIcons}>
-                                                {member.socials.linkedin && <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>}
-                                                {member.socials.twitter && <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer"><FaTwitter /></a>}
-                                                {member.socials.dribbble && <a href={member.socials.dribbble} target="_blank" rel="noopener noreferrer"><FaDribbble /></a>}
+                                                {member.socials.linkedin && <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer"><LinkedInIcon /></a>}
+                                                {member.socials.twitter && <a href={member.socials.twitter} target="_blank" rel="noopener noreferrer"><TwitterIcon /></a>}
+                                                {member.socials.dribbble && <a href={member.socials.dribbble} target="_blank" rel="noopener noreferrer"><DribbbleIcon /></a>}
                                             </div>
                                         </div>
                                         <p className={styles.teamCardDescriptionText}>
@@ -274,14 +320,14 @@ const Page: React.FC = () => {
                             aria-label="Previous member"
                             onClick={handlePrev}
                         >
-                            <FaArrowLeft />
+                            <ArrowLeftIcon />
                         </button>
                         <button
                             className={`${styles.teamNavButton} ${styles.teamNavButtonNext}`}
                             aria-label="Next member"
                             onClick={handleNext}
                         >
-                            <FaArrowRight />
+                            <ArrowRightIcon />
                         </button>
                     </div>
                 )}
@@ -301,7 +347,7 @@ const Page: React.FC = () => {
                         <a href="#" className={styles.ctaButton}>
                             {/* Corresponds to Frame 8 */}
                             <span className={styles.ctaButtonText}>Get Started</span>
-                            <FaArrowRight className={styles.ctaButtonIcon} /> {/* Icon */}
+                            <ArrowRightIcon />
                         </a>
                     </div>
                 </div>

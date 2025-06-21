@@ -9,6 +9,19 @@ import type SwiperCore from 'swiper'; // Используем type import для
 // --- Стили Swiper (нужен только базовый) ---
 import 'swiper/css';
 
+// SVG Arrow Icons
+const ArrowLeftIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 12H5M12 5L5 12L12 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
+const ArrowRightIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
 // --- Интерфейс для объекта отзыва ---
 interface Testimonial {
     id: string;
@@ -128,15 +141,7 @@ const TestimonialSection: React.FC = () => {
                                     onClick={handlePrev}
                                     aria-label="Previous testimonial"
                                 >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19 12H5M12 5L5 12L12 19" /* Стрелка с хвостом */
-                                              stroke="currentColor"
-                                              strokeWidth="2.5"
-                                              strokeLinecap="round"
-                                              strokeLinejoin="round"
-                                              fill="none"
-                                        />
-                                    </svg>
+                                    <ArrowLeftIcon />
                                 </button>
 
                                 {/* Счетчик слайдов - ОБНОВЛЕННАЯ СТРУКТУРА */}
@@ -156,15 +161,7 @@ const TestimonialSection: React.FC = () => {
                                     onClick={handleNext}
                                     aria-label="Next testimonial"
                                 >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 12H19M12 5L19 12L12 19" /* Стрелка с хвостом */
-                                              stroke="currentColor"
-                                              strokeWidth="2.5"
-                                              strokeLinecap="round"
-                                              strokeLinejoin="round"
-                                              fill="none"
-                                        />
-                                    </svg>
+                                    <ArrowRightIcon />
                                 </button>
                             </div>
                         )}

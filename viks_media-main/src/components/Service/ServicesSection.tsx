@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './ServicesSection.module.css'; // Import CSS Module
 
-// Placeholder for an icon component (replace with actual SVG or library)
+// SVG Play Icon
 const PlayIcon = () => (
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="5,3 19,12 5,21" fill="currentColor"/>
     </svg>
 );
 
