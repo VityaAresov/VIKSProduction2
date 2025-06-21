@@ -6,7 +6,7 @@ interface FaqItemProps {
      onToggle: (id: string) => void;
      icon?: React.ComponentType;
 }
-
+ 
 const FaqItem: React.FC<FaqItemProps> = ({ id, question, answer, isOpen, onToggle, icon: Icon }) => {
 
     const MinusIcon = () => (
