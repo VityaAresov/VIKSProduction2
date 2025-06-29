@@ -1,238 +1,871 @@
-@@ .. @@
- /* FAQ Section */
- .faqSection {
--    padding: 120px 0;
-+    padding: 80px 16px;
-+    display: flex;
-+    justify-content: center;
-+    align-items: center;
-+    box-sizing: border-box;
-     background: #FFFFFF;
- }
- 
--.faqGrid {
--    display: grid;
--    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
--    gap: 40px;
-+.faqContentWrapper {
-+    display: flex;
-+    flex-direction: row;
-+    align-items: flex-start;
-+    padding: 66px 80px;
-+    gap: 90px;
-+    max-width: 1408px;
-+    width: 100%;
-+    background: #FFFFFF;
-+    box-shadow: 0px 0px 14.8px rgba(0, 0, 0, 0.1);
-+    border-radius: 28px;
-+    box-sizing: border-box;
- }
- 
--.faqItem {
--    padding: 32px;
--    background: #f8fafc;
--    border-radius: 20px;
-+.faqLeftColumn {
-+    display: flex;
-+    flex-direction: column;
-+    gap: 40px;
-+    max-width: 531px;
-+    flex-basis: 531px;
-+    flex-shrink: 0;
- }
- 
--.faqQuestion {
-+.faqHeaderBlock {
-+    display: flex;
-+    flex-direction: column;
-+    gap: 48px;
-+}
-+
-+.faqTitle {
-     font-family: 'Evolventa', sans-serif;
-     font-weight: 700;
--    font-size: 20px;
-+    font-size: 48px;
-+    line-height: 1.3;
-+    letter-spacing: -0.03em;
-     color: #010205;
--    margin: 0 0 16px 0;
-+    margin: 0;
- }
- 
--.faqAnswer {
-+.faqDescription {
-     font-family: 'Open Sans', sans-serif;
--    font-size: 16px;
--    line-height: 1.6;
--    color: #64748b;
-+    font-weight: 400;
-+    font-size: 16px;
-+    line-height: 1.8;
-+    color: #7E8387;
-     margin: 0;
-+}
-+
-+.faqMoreQuestionsBlock {
-+    display: flex;
-+    flex-direction: column;
-+    align-items: flex-start;
-+    gap: 20px;
-+    margin-top: auto;
-+}
-+
-+.faqMoreQuestionsText {
-+    font-family: 'Open Sans', sans-serif;
-+    font-weight: 600;
-+    font-size: 16px;
-+    line-height: 1.4;
-+    color: #5C5D5F;
-+    margin: 0;
-+}
-+
-+.faqContactButton {
-+    box-sizing: border-box;
-+    display: flex;
-+    flex-direction: row;
-+    justify-content: center;
-+    align-items: flex-end;
-+    padding: 17px 16px;
-+    gap: 32px;
-+    width: 176px;
-+    height: 56px;
-+    border: 1px solid #010205;
-+    border-radius: 50px;
-+    background: transparent;
-+    color: #010205;
-+    font-family: 'Open Sans', sans-serif;
-+    font-weight: 700;
-+    font-size: 16px;
-+    line-height: 1.4;
-+    letter-spacing: -0.02em;
-+    text-decoration: none;
-+    cursor: pointer;
-+    transition: background-color 0.2s ease, color 0.2s ease;
-+    text-align: center;
-+}
-+
-+.faqContactButton:hover {
-+    background-color: #010205;
-+    color: #FFFFFF;
-+}
-+
-+.faqRightColumn {
-+    max-width: 627px;
-+    flex-basis: 627px;
-+    flex-shrink: 1;
-+    width: 100%;
-+}
-+
-+.faqAccordionList {
-+    border-top: 1px solid #E0E0E0;
-+}
-+
-+.faqItemWrapper {
-+    background: #FFFFFF;
-+    border-bottom: 1px solid #010205;
-+    width: 100%;
-+    box-sizing: border-box;
-+}
-+
-+.faqItemHeader {
-+    display: flex;
-+    justify-content: flex-start;
-+    align-items: center;
-+    padding: 26px 0;
-+    gap: 32px;
-+    width: 100%;
-+}
-+
-+.faqQuestionIcon {
-+    width: 24px;
-+    height: 24px;
-+    flex-shrink: 0;
-+    color: #99EA48;
-+    display: flex;
-+    align-items: center;
-+    justify-content: center;
-+}
-+
-+.faqQuestionText {
-+    font-family: 'Evolventa', sans-serif;
-+    font-weight: 700;
-+    font-size: 26px;
-+    line-height: 1.5;
-+    letter-spacing: -0.03em;
-+    color: #010205;
-+    margin: 0;
-+    flex-grow: 1;
-+}
-+
-+.faqAnswerContent {
-+    font-family: 'Open Sans', sans-serif;
-+    font-weight: 400;
-+    font-size: 16px;
-+    line-height: 1.8;
-+    color: #7E8387;
-+    padding-bottom: 26px;
-+    margin: 0;
-+}
-+
-+@media (max-width: 1024px) {
-+    .faqContentWrapper {
-+        flex-direction: column;
-+        gap: 40px;
-+        padding: 40px 30px;
-+    }
-+
-+    .faqLeftColumn, .faqRightColumn {
-+        max-width: 100%;
-+        flex-basis: auto;
-+    }
-+
-+    .faqTitle {
-+        font-size: 36px;
-+    }
-+
-+    .faqHeaderBlock {
-+        gap: 24px;
-+    }
-+}
-+
-+@media (max-width: 768px) {
-+    .faqContentWrapper {
-+        padding: 30px 20px;
-+        border-radius: 20px;
-+    }
-+
-+    .faqTitle {
-+        font-size: 32px;
-+    }
-+
-+    .faqDescription {
-+        font-size: 15px;
-+        line-height: 1.7;
-+    }
-+
-+    .faqContactButton {
-+        width: auto;
-+        padding: 14px 28px;
-+        height: 50px;
-+        font-size: 15px;
-+    }
-+
-+    .faqQuestionText {
-+        font-size: 20px !important;
-+        line-height: 1.4 !important;
-+    }
-+
-+    .faqAnswerContent {
-+        font-size: 15px !important;
-+        line-height: 1.7 !important;
-+        padding-bottom: 20px !important;
-+    }
-+
-+    .faqItemHeader {
-+        padding: 20px 0 !important;
-+    }
- }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+@font-face {
+    font-family: 'Evolventa';
+    src: url('/fonts/evolventa-bold.woff2') format('woff2'),
+    url('/fonts/evolventa-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.pageContainer {
+    width: 100%;
+    background: #FFFFFF;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.heroSection {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 80px 0;
+    margin-top: 0;
+}
+
+.heroContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.heroText {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.heroTitle {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: clamp(48px, 6vw, 72px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #010205;
+    margin: 0;
+}
+
+.heroSubtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+}
+
+.heroActions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.primaryCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: #99EA48;
+    color: #010205;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(153, 234, 72, 0.3);
+}
+
+.primaryCta:hover {
+    background: #7BC142;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(153, 234, 72, 0.4);
+}
+
+.secondaryCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: transparent;
+    color: #010205;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    border: 2px solid #010205;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.secondaryCta:hover {
+    background: #010205;
+    color: #FFFFFF;
+}
+
+.socialProof {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.proofText {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.clientLogos {
+    display: flex;
+    gap: 20px;
+}
+
+.clientLogos span {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.heroVisual {
+    position: relative;
+}
+
+.videoContainer {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.heroVideo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.videoOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(153, 234, 72, 0.1), rgba(1, 2, 5, 0.1));
+    pointer-events: none;
+}
+
+/* Problem Section */
+.problemSection {
+    padding: 120px 0;
+    background: #FFFFFF;
+}
+
+.problemContent {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.problemTitle {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 48px);
+    line-height: 1.2;
+    color: #010205;
+    margin: 0 0 32px 0;
+}
+
+.problemText {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #64748b;
+    margin: 0 0 48px 0;
+}
+
+.solutionBox {
+    background: linear-gradient(135deg, #99EA48, #7BC142);
+    padding: 48px;
+    border-radius: 20px;
+    text-align: left;
+}
+
+.solutionTitle {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #010205;
+    margin: 0 0 16px 0;
+}
+
+.solutionText {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #1e293b;
+    margin: 0;
+}
+
+/* Process Section */
+.processSection {
+    padding: 120px 0;
+    background: #f8fafc;
+}
+
+.sectionTitle {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 48px);
+    line-height: 1.2;
+    color: #010205;
+    text-align: center;
+    margin: 0 0 80px 0;
+}
+
+.sectionSubtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #64748b;
+    text-align: center;
+    margin: 0 0 80px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.processSteps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.processStep {
+    background: #FFFFFF;
+    padding: 40px 32px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.processStep:hover {
+    transform: translateY(-8px);
+}
+
+.stepNumber {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: #99EA48;
+    color: #010205;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.stepIcon {
+    font-size: 48px;
+    margin-bottom: 24px;
+}
+
+.stepTitle {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #010205;
+    margin: 0 0 16px 0;
+}
+
+.stepDescription {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Features Section */
+.featuresSection {
+    padding: 120px 0;
+    background: #FFFFFF;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.featureCard {
+    padding: 40px 32px;
+    border: 2px solid #f1f5f9;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+    border-color: #99EA48;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+    font-size: 48px;
+    margin-bottom: 24px;
+}
+
+.featureTitle {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #010205;
+    margin: 0 0 16px 0;
+}
+
+.featureDescription {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Portfolio Section */
+.portfolioSection {
+    padding: 120px 0;
+    background: #f8fafc;
+}
+
+.portfolioGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.portfolioItem {
+    background: #FFFFFF;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolioItem:hover {
+    transform: translateY(-8px);
+}
+
+.portfolioThumbnail {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.portfolioThumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.playOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolioThumbnail:hover .playOverlay {
+    opacity: 1;
+}
+
+.playButton {
+    width: 60px;
+    height: 60px;
+    background: #99EA48;
+    color: #010205;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.playButton:hover {
+    transform: scale(1.1);
+}
+
+.portfolioInfo {
+    padding: 24px;
+}
+
+.portfolioCategory {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #99EA48;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.portfolioTitle {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #010205;
+    margin: 8px 0 0 0;
+}
+
+/* Testimonials Section */
+.testimonialsSection {
+    padding: 120px 0;
+    background: #FFFFFF;
+}
+
+.testimonialSlider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    display: none;
+    text-align: center;
+}
+
+.testimonial.active {
+    display: block;
+}
+
+.testimonialQuote {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #010205;
+    font-style: italic;
+    margin: 0 0 40px 0;
+}
+
+.testimonialAuthor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.authorImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.authorInfo {
+    text-align: left;
+}
+
+.authorName {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #010205;
+    margin: 0;
+}
+
+.authorTitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #64748b;
+    margin: 4px 0 0 0;
+}
+
+.testimonialDots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.activeDot {
+    background: #99EA48;
+}
+
+/* Pricing Section */
+.pricingSection {
+    padding: 120px 0;
+    background: #f8fafc;
+}
+
+.pricingGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.pricingCard {
+    background: #FFFFFF;
+    padding: 40px 32px;
+    border-radius: 20px;
+    border: 2px solid #f1f5f9;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pricingCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+.pricingCard.highlighted {
+    border-color: #99EA48;
+    transform: scale(1.05);
+}
+
+.popularBadge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #99EA48;
+    color: #010205;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.planName {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #010205;
+    margin: 0 0 16px 0;
+}
+
+.planPrice {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #99EA48;
+    margin: 0 0 32px 0;
+}
+
+.planFeatures {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+}
+
+.planFeature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #64748b;
+}
+
+.checkmark {
+    color: #99EA48;
+    font-weight: 700;
+}
+
+.planCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: #99EA48;
+    color: #010205;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.planCta:hover {
+    background: #7BC142;
+}
+
+/* FAQ Section */
+.faqSection {
+    padding: 120px 0;
+    background: #FFFFFF;
+}
+
+.faqGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.faqItem {
+    padding: 32px;
+    background: #f8fafc;
+    border-radius: 20px;
+}
+
+.faqQuestion {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #010205;
+    margin: 0 0 16px 0;
+}
+
+.faqAnswer {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Final CTA Section */
+.finalCtaSection {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #010205, #1e293b);
+    color: #FFFFFF;
+}
+
+.finalCtaContent {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.finalCtaTitle {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 48px);
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+}
+
+.finalCtaText {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0 0 40px 0;
+}
+
+.finalCtaActions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.finalCtaPrimary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+    background: #99EA48;
+    color: #010205;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.finalCtaPrimary:hover {
+    background: #7BC142;
+    transform: translateY(-2px);
+}
+
+.finalCtaSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+    background: transparent;
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    border: 2px solid #FFFFFF;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.finalCtaSecondary:hover {
+    background: #FFFFFF;
+    color: #010205;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .heroContent {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+    
+    .heroText {
+        order: 2;
+    }
+    
+    .heroVisual {
+        order: 1;
+    }
+    
+    .processSteps {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+    
+    .featuresGrid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .pricingGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+    }
+    
+    .faqGrid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroSection {
+        padding: 80px 0;
+    }
+    
+    .problemSection,
+    .processSection,
+    .featuresSection,
+    .portfolioSection,
+    .testimonialsSection,
+    .pricingSection,
+    .faqSection,
+    .finalCtaSection {
+        padding: 80px 0;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    .heroActions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .primaryCta,
+    .secondaryCta {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .testimonialAuthor {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .authorInfo {
+        text-align: center;
+    }
+    
+    .finalCtaActions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .finalCtaPrimary,
+    .finalCtaSecondary {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroSection {
+        padding: 60px 0;
+    }
+    
+    .problemSection,
+    .processSection,
+    .featuresSection,
+    .portfolioSection,
+    .testimonialsSection,
+    .pricingSection,
+    .faqSection,
+    .finalCtaSection {
+        padding: 60px 0;
+    }
+    
+    .sectionTitle {
+        margin-bottom: 40px;
+    }
+    
+    .processSteps {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .featuresGrid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .portfolioGrid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .pricingGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .pricingCard.highlighted {
+        transform: none;
+    }
+}

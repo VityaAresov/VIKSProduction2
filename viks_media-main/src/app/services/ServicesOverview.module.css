@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+@font-face {
+    font-family: 'Evolventa';
+    src: url('/fonts/evolventa-bold.woff2') format('woff2'),
+    url('/fonts/evolventa-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.pageContainer {
+    width: 100%;
+    background: #FFFFFF;
+    overflow-x: hidden;
+}
+
+.heroSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 80px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    text-align: center;
+    margin-top: 0;
+}
+
+.heroContent {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.heroTitle {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: clamp(48px, 6vw, 72px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #010205;
+    margin: 0;
+}
+
+.heroDescription {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.servicesSection {
+    padding: 40px 80px;
+    background: #FFFFFF;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.serviceCard {
+    display: block;
+    background: #FFFFFF;
+    border: 2px solid #f1f5f9;
+    border-radius: 24px;
+    padding: 48px 40px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.serviceCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-color: #99EA48;
+}
+
+.serviceIcon {
+    font-size: 48px;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.serviceTitle {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+    color: #010205;
+    margin: 0 0 16px 0;
+}
+
+.serviceDescription {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #64748b;
+    margin: 0 0 32px 0;
+}
+
+.serviceFooter {
+    margin-top: auto;
+}
+
+.viewDetails {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #99EA48;
+    transition: color 0.2s ease;
+}
+
+.serviceCard:hover .viewDetails {
+    color: #7BC142;
+}
+
+@media (max-width: 960px) {
+    .heroSection, .servicesSection {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    
+    .servicesGrid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .heroSection {
+        padding: 80px 20px;
+    }
+    
+    .servicesSection {
+        padding: 60px 20px;
+    }
+    
+    .servicesGrid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .serviceCard {
+        padding: 40px 32px;
+    }
+    
+    .serviceTitle {
+        font-size: 28px;
+    }
+    
+    .serviceDescription {
+        font-size: 16px;
+    }
+}
